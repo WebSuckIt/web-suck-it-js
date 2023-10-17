@@ -6,6 +6,8 @@ import {
   GetChannelByNameResponse,
   GetChannelListRequest,
   GetChannelListResponse,
+  GetOrCreateChannelByNameRequest,
+  GetOrCreateChannelByNameResponse,
   UpdateChannelRequest,
   UpdateChannelResponse,
 } from "./type";
@@ -27,14 +29,29 @@ export class Channels extends Base {
     });
   }
 
-  getChannelByName(
+  getChannel(
     channel: GetChannelByNameRequest
   ): Promise<GetChannelByNameResponse> {
-    return this.request(`/${resourceName}/${channel?.channelName}/details`);
+    return this.request(`/${resourceName}/${channel?.channelName}/details`, {
+      method: "GET",
+    });
+  }
+
+  getOrCreateChannel(
+    channel: GetOrCreateChannelByNameRequest
+  ): Promise<GetOrCreateChannelByNameResponse> {
+    return this.request(
+      `/${resourceName}/${channel?.channelName}/get-or-create`,
+      {
+        method: "GET",
+      }
+    );
   }
 
   getChannels(params: GetChannelListRequest): Promise<GetChannelListResponse> {
     const queryParams = new URLSearchParams({ ...params });
-    return this.request(`/${resourceName}/list?${queryParams}`);
+    return this.request(`/${resourceName}/list?${queryParams}`, {
+      method: "GET",
+    });
   }
 }

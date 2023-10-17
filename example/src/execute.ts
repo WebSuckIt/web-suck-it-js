@@ -21,10 +21,10 @@ const connectionUrl = ws.getConnectionUrl({
   channelPassKey: "rERTWqDIs2MT8jlCfC0t",
 });
 
-const channel = ws.getOrCreateChannel({
+ws.getOrCreateChannel({
   channelName: "bright-abrasive-oxygen",
-});
+})
+  .then((Response) => console.log({ Response }))
+  .catch((e: Error) => console.log({ e: e.message }));
 
-console.log({ channel });
-
-console.log("testing...");
+console.log({ connectionUrl });

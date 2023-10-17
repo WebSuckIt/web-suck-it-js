@@ -8,5 +8,6 @@
     "link": "link ./"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }

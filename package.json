@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bisohns/web-suck-it.git"
+    "url": "git+https://github.com/websuckit/web-suck-it-js.git"
   },
   "keywords": [
     "websocket"
@@ -27,13 +27,14 @@
   "author": "bison corps",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bisohns/web-suck-it/issues"
+    "url": "https://github.com/websuckit/web-suck-it-js/issues"
   },
-  "homepage": "https://github.com/bisohns/web-suck-it#readme",
+  "homepage": "https://github.com/websuckit/web-suck-it-js#readme",
   "devDependencies": {
     "microbundle": "^0.15.1"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^4.0.2",
     "node-forge": "^1.3.1"
   }
 }

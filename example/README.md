@@ -2,5 +2,5 @@
 
 run `tsc`
 
-and then `dist/execute.ts`
+and then `node dist/execute.ts`
 

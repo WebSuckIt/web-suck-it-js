@@ -26,6 +26,12 @@ export type GetChannelByNameRequest = {
   channelName: string;
 };
 
+export type GetOrCreateChannelByNameRequest = {
+  channelName: string;
+};
+
+export type GetOrCreateChannelByNameResponse = Channel;
+
 export interface UpdateChannelRequest {
   channelId: string;
   channel: string;
