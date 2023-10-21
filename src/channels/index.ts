@@ -2,6 +2,8 @@ import { Base } from "../base";
 import {
   CreateChannelRequest,
   CreateChannelResponse,
+  DeleteChannelRequest,
+  DeleteChannelResponse,
   GetChannelByNameRequest,
   GetChannelByNameResponse,
   GetChannelListRequest,
@@ -24,7 +26,7 @@ export class Channels extends Base {
 
   updateChannel(channel: UpdateChannelRequest): Promise<UpdateChannelResponse> {
     return this.request(`/${resourceName}/update`, {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(channel),
     });
   }
@@ -52,6 +54,13 @@ export class Channels extends Base {
     const queryParams = new URLSearchParams({ ...params });
     return this.request(`/${resourceName}/list?${queryParams}`, {
       method: "GET",
+    });
+  }
+
+  deleteChannel(channel: DeleteChannelRequest): Promise<DeleteChannelResponse> {
+    return this.request(`/${resourceName}/${channel.channelId}/delete`, {
+      method: "DELETE",
+      body: JSON.stringify(channel),
     });
   }
 }

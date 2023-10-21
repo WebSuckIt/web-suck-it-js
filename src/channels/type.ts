@@ -49,3 +49,11 @@ export interface GetChannelListRequest {
 }
 
 export type GetChannelListResponse = Channel[];
+
+export interface DeleteChannelRequest {
+  channelId: string;
+}
+
+export interface DeleteChannelResponse {
+  status: boolean;
+}

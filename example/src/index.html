@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="../../dist/index.umd.js"></script>
+  </head>
+  <body>
+    <h1>Testing Websuckit</h1>
+
+    <script>
+      const publicKey = `-----BEGIN RSA PUBLIC KEY-----
+  MIIBCgKCAQEAvM3bjjUBUpfUZ/anTRVJmOOpmJSJ37hY2tzRCb2MIjtxF7/sUGj2
+  Ukk9fHsYAT9DmNgiViB386umX5qPYXMl8Ab88nNjslZS2MWtS2WMrNGTKWKRjqxP
+  yeA713j5ipP5KH3g1n+u+owv2tGaCyHh2x4iWzIV0sdgIjpE6oO3sAtaaHrZqowF
+  MDAGAV6yZpmgR9sUVKZ9GmoxgSE9DZl7sjlkWzMI2jOSANeSYiyi9H34AAqK5I1T
+  +KVXBDY8hPnmAdBzxpdnwLWq74/FTl1EveMmm1F6cdLJ07ki3heCKgD1GezPM3hp
+  1E+7cE3HALdB7sIOe3qa1h+pD5OF7q4EnQIDAQAB
+  -----END RSA PUBLIC KEY-----
+  `;
+
+      const ws = new Websuckit({
+        userId: "e762eaad-397b-4af8-9376-a8eff2731966",
+        accessKey: "a0fbimBwa30oyf04qYEE",
+        publicKey,
+      });
+
+      const connectionUrl = ws.getConnectionUrl({
+        channelName: "bright-abrasive-oxygen",
+        channelPassKey: "rERTWqDIs2MT8jlCfC0t",
+      });
+
+      ws.createChannel({
+        channel: "bright-abrasive-oxygen123",
+      })
+        .then((Response) => console.log({ Response }))
+        .catch((e) => console.log({ e: e }));
+
+      console.log({ connectionUrl });
+    </script>
+  </body>
+</html>

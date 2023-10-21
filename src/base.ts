@@ -1,5 +1,5 @@
 import forge from "node-forge";
-import fetch from "isomorphic-unfetch";
+import "isomorphic-unfetch";
 
 type Config = {
   userId: string;
@@ -35,10 +35,8 @@ export abstract class Base {
   private accessKey?: string;
   private publicKey?: string;
 
-  private baseUrl =
-    process.env.WEBSUCKIT_BASE_URL || "https://backend.websuckit.com/api";
-  private wssBaseUrl =
-    process.env.WEBSUCKIT_WSS_BASE_URL ?? "ws://backend.websuckit.com";
+  private baseUrl = "https://backend.websuckit.com/api";
+  private wssBaseUrl = "ws://backend.websuckit.com";
 
   constructor(config: Config) {
     this.userId = config.userId;
