@@ -1,4 +1,5 @@
 ## Bundle SDK
+[![Test](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/test.yml/badge.svg)](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/test.yml)
 
 `yarn run build`
 
