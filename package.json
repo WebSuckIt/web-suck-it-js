@@ -1,5 +1,5 @@
 {
-  "name": "websuckit",
+  "name": "@websuckit/js",
   "version": "0.0.9",
   "description": "Websuckit Javascript library for browser and nodejs",
 	"main": "./dist/websuckit.umd.js",
@@ -21,6 +21,9 @@
     "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",

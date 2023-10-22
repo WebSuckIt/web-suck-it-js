@@ -1,9 +1,6 @@
-# Getting Started
-
-### Install packages
-
-`yarn install`
-### Bundle SDK
+## Bundle SDK
+[![Test](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/test.yml/badge.svg)](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/test.yml)
+[![Deploy to NPM](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/deploy.yml/badge.svg)](https://github.com/WebSuckIt/web-suck-it-js/actions/workflows/deploy.yml)
 
 `yarn run build`
 
