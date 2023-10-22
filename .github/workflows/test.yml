@@ -28,6 +28,5 @@ jobs:
         with:
           node-version: 16.0
 
-      - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
       - run: yarn install
       - run: yarn test
