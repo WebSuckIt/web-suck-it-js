@@ -1,6 +1,6 @@
 {
   "name": "@websuckit/js",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Highly Scalable and distributed Websocket communication",
   "main": "dist/websuckit.js",
   "module": "dist/websuckit.m.js",
@@ -18,6 +18,9 @@
     "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
