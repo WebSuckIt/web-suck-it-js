@@ -39,5 +39,6 @@ jobs:
         run: |
           npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
           npm whoami
+          yarn build
           npm publish
 
