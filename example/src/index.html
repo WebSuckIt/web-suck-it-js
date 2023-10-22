@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script src="../../dist/websuckit.umd.js"></script>
+    <script src="https://unpkg.com/testsuckit@0.0.7/dist/testsuckit.umd.js"></script>
   </head>
   <body>
     <h1>Testing Websuckit</h1>
@@ -21,7 +21,7 @@
           -----END RSA PUBLIC KEY-----
           `;
 
-      const ws = new Websuckit({
+      const ws = new testsuckit({
         userId: "e762eaad-397b-4af8-9376-a8eff2731966",
         accessKey: "a0fbimBwa30oyf04qYEE",
         publicKey,
@@ -32,13 +32,10 @@
         channelPassKey: "rERTWqDIs2MT8jlCfC0t",
       });
 
-      ws.createChannel({
-        channel: "bright-abrasive-oxygen1234",
+      ws.getOrCreateChannel({
+        channelName: "test123",
       })
         .then((Response) => console.log({ Response }))
-        .then((data) => {
-          console.log(data);
-        })
         .catch((e) => console.log({ e: e }));
 
       console.log({ connectionUrl });

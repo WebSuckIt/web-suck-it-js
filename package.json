@@ -1,16 +1,19 @@
 {
   "name": "@websuckit/js",
-  "version": "0.0.1",
-  "description": "Highly Scalable and distributed Websocket communication",
-  "main": "dist/websuckit.js",
-  "module": "dist/websuckit.m.js",
-  "unpkg": "dist/websuckit.umd.js",
-  "types": "dist/index.d.ts",
+  "version": "0.0.9",
+  "description": "Websuckit Javascript library for browser and nodejs",
+	"main": "./dist/websuckit.umd.js",
+	"module": "./dist/websuckit.module.mjs",
   "exports": {
-    "require": "./dist/index.js",
-    "default": "./dist/index.modern.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/websuckit.modern.mjs",
+      "require": "./dist/websuckit.js"
+    }
   },
-  "amdName": "Websuckit",
+  "unpkg": "./dist/websuckit.umd.js",
+  "types": "./dist/index.d.ts",
+  "amdName": "websuckit",
   "files": [
     "dist"
   ],
@@ -28,10 +31,15 @@
   },
   "keywords": [
     "websocket",
-    "websocket as a service"
+    "websocket as a service",
+    "websuckit",
+    "client",
+    "websocket",
+    "isomorphic",
+    "events"
   ],
   "author": "websuckit",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/websuckit/web-suck-it-js/issues"
   },
