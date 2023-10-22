@@ -1,16 +1,19 @@
 {
-  "name": "@websuckit/js",
-  "version": "1.0.0",
+  "name": "testsuckit",
+  "version": "0.0.8",
   "description": "Highly Scalable and distributed Websocket communication",
-  "main": "dist/websuckit.js",
-  "module": "dist/websuckit.m.js",
-  "unpkg": "dist/websuckit.umd.js",
-  "types": "dist/index.d.ts",
+	"main": "./dist/testsuckit.umd.js",
+	"module": "./dist/testsuckit.module.mjs",
   "exports": {
-    "require": "./dist/index.js",
-    "default": "./dist/index.modern.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/testsuckit.modern.mjs",
+      "require": "./dist/testsuckit.js"
+    }
   },
-  "amdName": "Websuckit",
+  "unpkg": "./dist/testsuckit.umd.js",
+  "types": "./dist/index.d.ts",
+  "amdName": "testsuckit",
   "files": [
     "dist"
   ],
@@ -21,18 +24,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/websuckit/web-suck-it-js.git"
+    "url": "git+https://github.com/testsuckit/web-suck-it-js.git"
   },
   "keywords": [
     "websocket",
     "websocket as a service"
   ],
-  "author": "websuckit",
+  "author": "testsuckit",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/websuckit/web-suck-it-js/issues"
+    "url": "https://github.com/testsuckit/web-suck-it-js/issues"
   },
-  "homepage": "https://github.com/websuckit/web-suck-it-js#readme",
+  "homepage": "https://github.com/testsuckit/web-suck-it-js#readme",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",

@@ -1,4 +1,4 @@
-import Websuckit from "@websuckit/js";
+import Websuckit from "testsuckit";
 
 const publicKey = `-----BEGIN RSA PUBLIC KEY-----
 MIIBCgKCAQEAvM3bjjUBUpfUZ/anTRVJmOOpmJSJ37hY2tzRCb2MIjtxF7/sUGj2
@@ -21,10 +21,10 @@ const connectionUrl = ws.getConnectionUrl({
   channelPassKey: "rERTWqDIs2MT8jlCfC0t",
 });
 
-ws.createChannel({
-  channel: "bright-abrasive-oxygen123",
+ws.getOrCreateChannel({
+  channelName: "test123",
 })
   .then((Response) => console.log({ Response }))
-  .catch((e: Error) => console.log({ e: e }));
+  .catch((e) => console.log({ e: e }));
 
 console.log({ connectionUrl });

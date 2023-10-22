@@ -5,6 +5,8 @@ type Config = {
   userId: string;
   accessKey?: string;
   publicKey?: string;
+  baseUrl?: string;
+  wssBaseUrl?: string;
 };
 
 type connectToChannelReq = {
@@ -21,30 +23,27 @@ type GenerateChannelPath = {
   replaySelf?: boolean;
 };
 
-export type Success<V> = { ok: true; value: V };
-export type Failure<E extends Error> = {
-  ok: false;
-  error: E;
-};
-export type Result<Value, E extends Error = Error> =
-  | Success<Value>
-  | Failure<E>;
+export type Success = { ok: true; value: string };
+export type Failure = { ok: false; error: Error };
+export type Result = Success | Failure;
 
 export abstract class Base {
   private userId: string;
   private accessKey?: string;
   private publicKey?: string;
 
-  private baseUrl = "https://backend.websuckit.com/api";
-  private wssBaseUrl = "ws://backend.websuckit.com";
+  private baseUrl?: string;
+  private wssBaseUrl?: string;
 
   constructor(config: Config) {
     this.userId = config.userId;
     this.accessKey = config.accessKey;
     this.publicKey = config.publicKey;
+    this.baseUrl = config.baseUrl || "https://backend.websuckit.com/api";
+    this.wssBaseUrl = config.wssBaseUrl || "wss://backend.websuckit.com";
   }
 
-  private generateChannelPath(args: GenerateChannelPath): Result<string> {
+  private generateChannelPath(args: GenerateChannelPath): Result {
     try {
       const { publicKey, userId, channelName, channelPassKey, replaySelf } =
         args;
@@ -62,7 +61,7 @@ export abstract class Base {
         .replace(/=+$/, "");
       return {
         ok: true,
-        value: `${this.wssBaseUrl}${userId}/${channelName}?encrypted_token=${base64EncodedEncryptedToken}${replay}`,
+        value: `${this.wssBaseUrl}/${userId}/${channelName}?encrypted_token=${base64EncodedEncryptedToken}${replay}`,
       };
     } catch (error) {
       return { ok: false, error };
@@ -74,7 +73,7 @@ export abstract class Base {
    * @param args {connectToChannelReq}
    * @returns string // websocket connection url
    */
-  getConnectionUrl(args: connectToChannelReq): Result<string> {
+  getConnectionUrl(args: connectToChannelReq): Result {
     const connectionUrl = this.generateChannelPath({
       ...args,
       publicKey: this.publicKey,
