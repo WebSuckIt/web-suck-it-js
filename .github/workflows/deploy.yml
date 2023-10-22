@@ -1,7 +1,6 @@
 name: Deploy to NPM
 on:
   push:
-    branches: [ "main" ]
     tags:
       - 'v*.*.*'
 
@@ -35,4 +34,5 @@ jobs:
         uses: mbround18/install-jq@v1
       - name: Replace version
         run: |
-          jq '.version="${{github.ref_name}}"' package.json
+          jq '.version="${{github.ref_name}}"' package.json > /tmp/package.json
+          mv /tmp/package.json package.json
