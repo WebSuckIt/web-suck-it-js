@@ -1,6 +1,7 @@
 name: Deploy to NPM
 on:
   push:
+    branches: [ "main" ]
     tags:
       - 'v*.*.*'
 
@@ -29,3 +30,9 @@ jobs:
           node-version: 16.0
 
       - run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: Install JQ Tool
+        uses: mbround18/install-jq@v1
+      - name: Replace version
+        run: |
+          jq '.version="${{github.ref_name}}"' package.json
