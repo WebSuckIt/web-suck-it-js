@@ -37,9 +37,8 @@ jobs:
 
       - name: Deploy to npm
         run: |
-          npm whoami
+          npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_AUTH_TOKEN }}"
+          yarn install
           yarn build
           npm publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
