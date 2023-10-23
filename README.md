@@ -61,7 +61,7 @@ const websuckit = require('@websuckit/js');
 #### CDN
 
 ```html
-<script src="https://unpkg.com/testsuckit@0.0.7/dist/testsuckit.umd.js"></script>
+<script src="https://unpkg.com/@websuckit/js@0.0.7/dist/websuckit.umd.js"></script>
 ```
 
 ### Node.js
