@@ -7,7 +7,6 @@ export type Channel = {
   updated_at: string;
 };
 export type CreateChannelResponse = {
-  status: string;
   channel: Channel;
 };
 
@@ -16,7 +15,6 @@ export interface CreateChannelRequest {
 }
 
 export type EditChannelResponse = {
-  status: string;
   channel: Channel;
 };
 
@@ -54,6 +52,4 @@ export interface DeleteChannelRequest {
   channelId: string;
 }
 
-export interface DeleteChannelResponse {
-  status: boolean;
-}
+export type DeleteChannelResponse = string;
