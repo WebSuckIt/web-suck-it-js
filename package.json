@@ -1,6 +1,6 @@
 {
   "name": "@websuckit/js",
-  "version": "0.0.9",
+  "version": "0.0.0",
   "description": "Websuckit Javascript library for browser and nodejs",
 	"main": "./dist/websuckit.umd.js",
 	"module": "./dist/websuckit.module.mjs",
