@@ -49,19 +49,19 @@ yarn add @websuckit/js
 Then:
 
 ```javascript
-import websuckit from '@websuckit/js';
+import Websuckit from '@websuckit/js';
 ```
 
 Or, if you're not using ES6 modules:
 
 ```javascript
-const websuckit = require('@websuckit/js');
+const Websuckit = require('@websuckit/js');
 ```
 
 #### CDN
 
 ```html
-<script src="https://unpkg.com/@websuckit/js@0.0.7/dist/websuckit.umd.js"></script>
+<script src="https://unpkg.com/@websuckit/js/dist/websuckit.umd.js"></script>
 ```
 
 ### Node.js
@@ -69,7 +69,7 @@ const websuckit = require('@websuckit/js');
 Having installed `@websuckit/js` via an NPM-compatible package manager, run:
 
 ```javascript
-import websuckit from '@websuckit/js';
+import Websuckit from '@websuckit/js';
 ```
 
 ## Initialization
