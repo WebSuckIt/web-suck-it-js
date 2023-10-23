@@ -12,27 +12,25 @@ our [official docs](https://doc.websuckit.com/javascript_quick_start).
 
 The following topics are covered:
 
-* [Installation](https://github.com/websuckit/web-suck-it-js#installation)
-  * [Web](https://github.com/websuckit/web-suck-it-js#web)
-  * [Node.js](https://github.com/websuckit/web-suck-it-js#nodejs)
+* [Installation](https://github.com/WebSuckIt/web-suck-it-js#installation)
+  * [Web](https://github.com/WebSuckIt/web-suck-it-js#web)
+  * [Node.js](https://github.com/WebSuckIt/web-suck-it-js#web)
 * [Initialization](https://github.com/websuckit/web-suck-it-js#initialization)
-* [Channels](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Create Channel](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Get Channel](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Get Channels](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Get or Create Channel](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Update Channel](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-  * [Delete Channel](https://github.com/websuckit/web-suck-it-js#accessing-channels)
-* [Accessing a channel's websocket URL](https://github.com/websuckit/web-suck-it-js#accessing-channels)
+* [Channels](https://github.com/WebSuckIt/web-suck-it-js#channel)
+  * [Create Channel](https://github.com/WebSuckIt/web-suck-it-js#channel)
+  * [Get Channel](https://github.com/WebSuckIt/web-suck-it-js#channel)
+  * [Get Channels](https://github.com/WebSuckIt/web-suck-it-js#get-channels-paginated)
+  * [Get or Create Channel](https://github.com/WebSuckIt/web-suck-it-js#get-or-create-channel)
+  * [Update Channel](https://github.com/WebSuckIt/web-suck-it-js#update-channel)
+  * [Delete Channel](https://github.com/WebSuckIt/web-suck-it-js#delete-channel)
+  * [Accessing a channel's websocket URL](https://github.com/WebSuckIt/web-suck-it-js#accessing-a-channels-websocket-url)
 ## Supported platforms
 
 * Web
   * We test against Chrome, Firefox and Safari.
-  * Works [in web pages](https://github.com/websuckit/web-suck-it-js#web), [web
-    workers and service
-    workers](https://github.com/websuckit/web-suck-it-js#web-workers)
-  * Works with all major web frameworks, including
-* [Node.js](https://github.com/websuckit/web-suck-it-js#nodejs)
+  * Works [in web pages](https://github.com/WebSuckIt/web-suck-it-js#accessing-a-channels-websocket-url).
+  * Works with major web frameworks, including
+* [Node.js](https://github.com/WebSuckIt/web-suck-it-js#accessing-a-channels-websocket-url)
 
 ## Installation
 
@@ -111,20 +109,20 @@ const channelResponse = ws.createChannel({
 
 ### Get channel
 
-```json
+```js
 const channelResponse = ws.getChannel({
   channelName: "channel_name",
 })
 
 // Expected response
-{
-  id: string;
-  name: string;
-  pass_key: string;
-  user_id: string;
-  created_at: string;
-  updated_at: string;
-}
+// {
+//   id: string;
+//   name: string;
+//   pass_key: string;
+//   user_id: string;
+//   created_at: string;
+//   updated_at: string;
+// }
 ```
 
 ### Get channels (paginated)
@@ -138,8 +136,13 @@ const channelResponse = ws.getChannels({
 
 // Expected response
 // {
-//    status: boolean
-// }
+//   id: string;
+//   name: string;
+//   pass_key: string;
+//   user_id: string;
+//   created_at: string;
+//   updated_at: string;
+// }[]
 ```
 
 
