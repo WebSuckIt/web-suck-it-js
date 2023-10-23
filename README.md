@@ -207,7 +207,7 @@ const connectionUrl = ws.getConnectionUrl({
   channelPassKey: CHANNEL_PASSKEY,
 })
 
-// The expected return of the connectionUrl is a websocket connection e.g wss://backend.websuckit.com/e762eaad-397b-4af8-9376-a8eff2731966/bright/{encrypted_token}
+// The expected return of the connectionUrl is a websocket connection e.g {ok: true, value: wss://backend.websuckit.com/e762eaad-397b-4af8-9376-a8eff2731966/bright/{encrypted_token}}
 ```
 
 * `channelName` - name of channel
