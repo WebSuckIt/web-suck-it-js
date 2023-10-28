@@ -6,7 +6,7 @@
 This Websuckit client library supports web browsers and Node.js
 
 For tutorials and more in-depth information about websuckit Channels, visit
-our [official docs](https://doc.websuckit.com/javascript_quick_start).
+our [official docs](https://docs.websuckit.com).
 
 ## Usage Overview
 
