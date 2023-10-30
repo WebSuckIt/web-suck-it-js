@@ -87,6 +87,22 @@ You can get your `USER_ID`, `ACCESS_KEY` and `PUBLIC_KEY` from the [websuckit da
 
 ## Channel
 
+## Accessing a channel's websocket URL
+
+It is possible to access a channel websocket URL by channel name, through the `getConnectionUrl` function:
+
+```js
+const connectionUrl = ws.getConnectionUrl({
+  channelName: CHANNEL_NAME,
+  channelPassKey: CHANNEL_PASSKEY,
+})
+
+// The expected return of the connectionUrl is a websocket connection e.g {ok: true, value: wss://backend.websuckit.com/e762eaad-397b-4af8-9376-a8eff2731966/bright/{encrypted_token}}
+```
+
+* `channelName` - name of channel
+* `channelPassKey` - channel passkey
+
 ### Create channel
 
 ```js
@@ -146,7 +162,7 @@ const channelResponse = ws.getChannels({
 ```
 
 
-## Get or Create channel
+### Get or Create channel
 
 ```js
 const channelResponse = ws.getOrCreateChannel({
@@ -164,7 +180,7 @@ const channelResponse = ws.getOrCreateChannel({
 // }
 ```
 
-## Update channel
+### Update channel
 
 ```js
 const channelResponse = ws.getOrCreateChannel({
@@ -196,22 +212,6 @@ const channelResponse = ws.getOrCreateChannel({
 // Expected response
 // string
 ```
-
-## Accessing a channel's websocket URL
-
-It is possible to access a channel websocket URL by channel name, through the `getConnectionUrl` function:
-
-```js
-const connectionUrl = ws.getConnectionUrl({
-  channelName: CHANNEL_NAME,
-  channelPassKey: CHANNEL_PASSKEY,
-})
-
-// The expected return of the connectionUrl is a websocket connection e.g {ok: true, value: wss://backend.websuckit.com/e762eaad-397b-4af8-9376-a8eff2731966/bright/{encrypted_token}}
-```
-
-* `channelName` - name of channel
-* `channelPassKey` - channel passkey
 
 ## Test SDK
 
