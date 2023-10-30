@@ -13,7 +13,7 @@
   },
   "unpkg": "./dist/websuckit.umd.js",
   "types": "./dist/index.d.ts",
-  "amdName": "websuckit",
+  "amdName": "Websuckit",
   "files": [
     "dist"
   ],
