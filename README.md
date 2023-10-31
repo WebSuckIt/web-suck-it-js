@@ -131,7 +131,7 @@ const channelResponse = ws.getChannel({
 const channelResponse = ws.getChannels({
     page: "0", // page is 0 indexed
     per_page: "10",
-    search_key: "channel_name"; // (optional) search channels by channel name
+    search_key: "channel_name" // (optional) search channels by channel name
 })
 
 // Expected response
