@@ -205,7 +205,7 @@ const channelResponse = ws.getOrCreateChannel({
 ### Delete channel
 
 ```js
-const channelResponse = ws.getOrCreateChannel({
+const channelResponse = ws.deleteChannel({
     channelId: "<CHANNEL_UUID>",
 })
 
