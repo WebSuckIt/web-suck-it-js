@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script src="https://unpkg.com/testsuckit/dist/testsuckit.umd.js"></script>
+    <!-- <script src="https://unpkg.com/testsuckit/dist/testsuckit.umd.js"></script> -->
+    <script src="https://unpkg.com/@websuckit/js/dist/websuckit.umd.js"></script>
   </head>
   <body>
     <h1>Testing Websuckit</h1>
@@ -21,7 +22,7 @@
           -----END RSA PUBLIC KEY-----
           `;
 
-      const ws = new testsuckit({
+      const ws = new websuckit({
         userId: "e762eaad-397b-4af8-9376-a8eff2731966",
         accessKey: "a0fbimBwa30oyf04qYEE",
         publicKey,
