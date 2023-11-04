@@ -185,8 +185,8 @@ const channelResponse = ws.getOrCreateChannel({
 ```js
 const channelResponse = ws.getOrCreateChannel({
     channelId: "<CHANNEL_UUID>",
-    channel: "channel_name"
-    regenerate_pass_key: false; // (optional) If regenerate_pass_key is true the channel passkey will be regenerated
+    channel: "channel_name",
+    regenerate_pass_key: false // (optional) If regenerate_pass_key is true the channel passkey will be regenerated
 })
 
 // Expected response
