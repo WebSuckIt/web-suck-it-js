@@ -2,6 +2,7 @@ export type Channel = {
   id: string;
   name: string;
   pass_key: string;
+  max_connections: null | number;
   user_id: string;
   created_at: string;
   updated_at: string;
@@ -12,6 +13,7 @@ export type CreateChannelResponse = {
 
 export interface CreateChannelRequest {
   channel: string;
+  max_connections?: number;
 }
 
 export type EditChannelResponse = {
@@ -34,6 +36,7 @@ export interface UpdateChannelRequest {
   channelId: string;
   channel: string;
   regenerate_pass_key: boolean;
+  max_connections?: number;
 }
 
 export interface UpdateChannelResponse {

@@ -25,7 +25,7 @@ export class Channels extends Base {
   }
 
   updateChannel(channel: UpdateChannelRequest): Promise<UpdateChannelResponse> {
-    return this.request(`/${resourceName}/update`, {
+    return this.request(`/${resourceName}/${channel.channelId}/update`, {
       method: "PUT",
       body: JSON.stringify(channel),
     });
