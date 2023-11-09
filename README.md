@@ -108,19 +108,8 @@ const connectionUrl = ws.getConnectionUrl({
 ```js
 const channelResponse = ws.createChannel({
   channel: "channel_name", // channel should be a slug e.g test-channel
+  max_connections?: number; // (optional) maximum number of concurrent connections per channel
 })
-
-// Expected response
-// {
-//     channel: {
-//         id: string;
-//         name: string;
-//         pass_key: string;
-//         user_id: string;
-//         created_at: string;
-//         updated_at: string;
-//     }
-// }
 ```
 
 ### Get channel
@@ -129,16 +118,6 @@ const channelResponse = ws.createChannel({
 const channelResponse = ws.getChannel({
   channelName: "channel_name",
 })
-
-// Expected response
-// {
-//   id: string;
-//   name: string;
-//   pass_key: string;
-//   user_id: string;
-//   created_at: string;
-//   updated_at: string;
-// }
 ```
 
 ### Get channels (paginated)
@@ -149,16 +128,6 @@ const channelResponse = ws.getChannels({
     per_page: "10",
     search_key: "channel_name" // (optional) search channels by channel name
 })
-
-// Expected response
-// {
-//   id: string;
-//   name: string;
-//   pass_key: string;
-//   user_id: string;
-//   created_at: string;
-//   updated_at: string;
-// }[]
 ```
 
 
@@ -168,16 +137,6 @@ const channelResponse = ws.getChannels({
 const channelResponse = ws.getOrCreateChannel({
   channelName: "channelName", // channel should be a slug e.g test-channel
 })
-
-// Expected response
-// {
-//   id: string;
-//   name: string;
-//   pass_key: string;
-//   user_id: string;
-//   created_at: string;
-//   updated_at: string;
-// }
 ```
 
 ### Update channel
@@ -187,19 +146,8 @@ const channelResponse = ws.updateChannel({
     channelId: "<CHANNEL_UUID>",
     channel: "channel_name",
     regenerate_pass_key: false // (optional) If regenerate_pass_key is true the channel passkey will be regenerated
+    max_connections?: number; // (optional) maximum number of concurrent connections per channel
 })
-
-// Expected response
-// {
-//     channel: {
-//         id: string;
-//         name: string;
-//         pass_key: string;
-//         user_id: string;
-//         created_at: string;
-//         updated_at: string;
-//     }
-// }
 ```
 
 ### Delete channel
